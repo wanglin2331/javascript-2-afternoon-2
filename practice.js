@@ -151,16 +151,20 @@ var getRandomArbitrary = function() {
 //Code Here
 var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 var randomNum=getRandomArbitrary();
-var newRandomArr=[];
-function finder(){
-  for(var i=0;i<numbers.length;i++){
-    var result = numbers[i]===randomNum
-  }
-  return newRandomArr.push(result)
+
+
+function finder() {
+  var filteredArray = numbers.filter(function(val) { return val===randomNum})
+  if(filteredArray.length == 0){
+    return false
+  } else {
+    return true
+  };
 }
 
+finder(randomNum)
 console.log(randomNum);
-console.log(newRandomArr);
+console.log(finder(numbers));
 
 ////////// PROBLEM 8 //////////
 
